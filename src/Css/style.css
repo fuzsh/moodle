@@ -473,34 +473,38 @@ body {
   .row .col-3-of-4 {
     width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
-.section-login {
+.section-enter {
   padding: 5rem 0;
   background-image: linear-gradient(to right bottom, #002c3e, #0e3746); }
   @media only screen and (max-width: 56.25em) {
-    .section-login {
+    .section-enter {
       padding: 10rem 0; } }
 
-.login {
-  background-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 0%, transparent 50%), url(../Images/loginPage.jpg);
+.enter {
   background-size: 100%;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
+  .enter__login {
+    background-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 0%, transparent 50%), url(../Images/loginPage.jpg); }
+  .enter__register {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../Images/loginPage.jpg); }
   @media only screen and (max-width: 75em) {
-    .login {
+    .enter {
       background-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../Images/loginPage.jpg);
       background-size: cover; } }
   @media only screen and (max-width: 56.25em) {
-    .login {
+    .enter {
       background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../Images/loginPage.jpg); } }
-  .login__form {
-    direction: rtl;
-    margin-left: auto;
-    margin-right: 0;
+  .enter__form {
     width: 50%;
     padding: 6rem; }
+    .enter__form__login {
+      margin-left: auto;
+      margin-right: 0;
+      direction: rtl; }
     @media only screen and (max-width: 75em) {
-      .login__form {
+      .enter__form {
         width: 65%; } }
     @media only screen and (max-width: 56.25em) {
-      .login__form {
+      .enter__form {
         width: 100%; } }

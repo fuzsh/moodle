@@ -23,6 +23,8 @@ const Register = ({ doRegister, goToLogin }) => {
   };
 
   return (
+    <div className="enter enter__register">
+    <div className="enter__form">
     <form action="#" className="form">
       <div className="u-margin-bottom-medium">
         <h2 className="heading-secondary">ثبت‌نام کنید</h2>
@@ -74,6 +76,8 @@ const Register = ({ doRegister, goToLogin }) => {
         </p>
       </div>
     </form>
+    </div>
+    </div>
   );
 };
 

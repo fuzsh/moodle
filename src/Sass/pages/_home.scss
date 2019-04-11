@@ -1,4 +1,4 @@
-.section-login {
+.section-enter {
     padding: 5rem 0;
     background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
 
@@ -7,12 +7,21 @@
     }
 }
 
-.login {
-    background-image: linear-gradient(-75deg,
+.enter {
+    &__login{
+        background-image: linear-gradient(-75deg,
         rgba($color-white, .9) 50%,
         rgba($color-white, .9) 0%,
         transparent 50%),
         url(../Images/loginPage.jpg);
+    }
+    &__register{
+        background-image: linear-gradient(105deg,
+        rgba($color-white, .9) 0%,
+        rgba($color-white, .9) 50%,
+        transparent 50%),
+        url(../Images/loginPage.jpg);
+    }
     background-size: 100%;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
@@ -34,9 +43,12 @@
     }
 
     &__form {
-        direction: rtl;
+        &__login{
         margin-left: auto;
         margin-right: 0;
+        direction: rtl;
+        }
+        
         width: 50%;
         padding: 6rem;
 

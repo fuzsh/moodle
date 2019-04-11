@@ -10,13 +10,9 @@ class Auth extends Component {
         const componentToRender = this.props.isLoginPage ? <Login /> : <Register />;
         return (
             <React.Fragment>
-                <section className="section-login">
+                <section className="section-enter">
                     <div className="row">
-                        <div className="login">
-                            <div className="login__form">
-                                {componentToRender}
-                            </div>
-                        </div>
+                        {componentToRender}
                     </div>
                 </section>
             </React.Fragment>
