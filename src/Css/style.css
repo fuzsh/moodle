@@ -481,17 +481,17 @@ body {
       padding: 10rem 0; } }
 
 .login {
-  background-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 0%, transparent 50%), url(../Images/nat-10.jpg);
+  background-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 0%, transparent 50%), url(../Images/loginPage.jpg);
   background-size: 100%;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
   @media only screen and (max-width: 75em) {
     .login {
-      background-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../Images/nat-10.jpg);
+      background-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../Images/loginPage.jpg);
       background-size: cover; } }
   @media only screen and (max-width: 56.25em) {
     .login {
-      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../Images/nat-10.jpg); } }
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../Images/loginPage.jpg); } }
   .login__form {
     direction: rtl;
     margin-left: auto;

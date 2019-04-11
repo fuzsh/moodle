@@ -75,10 +75,23 @@ function* userReistergWatcher() {
   yield takeEvery(consts.USER_REGISTER_REQUESTED, userRegisterWorker);
 }
 
+function* appPageChangerWorker(action) {
+  let { status } = action.payload;
+  yield put({
+    type: consts.APP_PAGECHANGER_SUCCESS,
+    payload: { status }
+  });
+}
+
+function* appPageChangerWatcher() {
+  yield takeEvery(consts.APP_PAGECHANGER_REQUESTED, appPageChangerWorker);
+}
+
 export default function* sagaApi() {
   return yield all([
     applicationInitWatcher(),
     userLoginWatcher(),
-    userReistergWatcher()
+    userReistergWatcher(),
+    appPageChangerWatcher()
   ]);
 }

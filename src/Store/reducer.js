@@ -2,7 +2,8 @@ import consts from "./constants";
 
 const defaultState = {
   isUserLoggedIn: false,
-  message:[],
+  isLoginPage: true,
+  message: [],
   errors: []
 };
 
@@ -22,7 +23,10 @@ const reducer = (state = defaultState, action) => {
       };
       break;
     case consts.USER_REGISTER_SUCCESS:
-      newState = { ...state, message:[action.payload.message] };
+      newState = { ...state, message: [action.payload.message] };
+      break;
+    case consts.APP_PAGECHANGER_SUCCESS:
+      newState = { ...state, isLoginPage: action.payload.status };
       break;
     default:
       newState = state;
