@@ -1,0 +1,51 @@
+.section-login {
+    padding: 5rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
+}
+
+.login {
+    background-image: linear-gradient(-75deg,
+        rgba($color-white, .9) 50%,
+        rgba($color-white, .9) 0%,
+        transparent 50%),
+        url(../Images/nat-10.jpg);
+    background-size: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+
+    @include respond(tab-land) {
+        background-image: linear-gradient(-75deg,
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 65%,
+            transparent 65%),
+            url(../Images/nat-10.jpg);
+        background-size: cover;
+    }
+
+    @include respond(tab-port) {
+        background-image: linear-gradient(to right,
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 100%),
+            url(../Images/nat-10.jpg);
+    }
+
+    &__form {
+        direction: rtl;
+        margin-left: auto;
+        margin-right: 0;
+        width: 50%;
+        padding: 6rem;
+
+        @include respond(tab-land) {
+            width: 65%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+        }
+    }
+}
