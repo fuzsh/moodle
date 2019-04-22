@@ -14,12 +14,12 @@ const reducer = (state = defaultState, action) => {
       newState = { ...state, isUserLoggedIn: action.payload.isUserLoggedIn };
       break;
     case consts.USER_LOGIN_SUCCESS:
-      newState = { ...state, isUserLoggedIn: true };
+      newState = { ...state, isUserLoggedIn: action.payload.success };
       break;
     case consts.USER_LOGIN_FAILED:
       newState = {
         ...state,
-        errors: [...state.errors, action.payload.message]
+        errors: [action.payload.message]
       };
       break;
     case consts.USER_REGISTER_SUCCESS:

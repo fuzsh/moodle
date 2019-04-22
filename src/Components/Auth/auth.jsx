@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 
 import Login from './login';
 import Register from './register';
+import Dashboard from '../Panel/dashboard'
 
 class Auth extends Component {
 
     render() {
-        const componentToRender = this.props.isLoginPage ? <Login /> : <Register />;
+        const componentToRender = this.props.isUserLoggedIn ? <Dashboard /> : this.props.isLoginPage ? <Login /> : <Register />;
         return (
             <React.Fragment>
                 <section className="section-enter">

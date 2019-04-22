@@ -24,26 +24,34 @@ function* applicationInitWatcher() {
 }
 
 function* userLoginWorker(action) {
+  let { userName, userPassword } = action.payload;
   try {
-    let { userEmail, userPassword } = action.payload;
     let result = yield call(() => {
-      if (userEmail === "aaa@gmail.com" && userPassword === "123456") {
-        localStorage.setItem("isUserLoggedIn", true);
-        return true;
-      }
-      throw new Error("Fuck All");
+      return axios
+        .post("http://localhost:5000/api/auth", {
+          username: userName,
+          password: userPassword
+        })
+        .then(response => {
+          if (response.status === 200) {
+            localStorage.setItem("x-auth-token", response.data);
+            localStorage.setItem("isUserLoggedIn", true);
+          }
+        });
     });
     yield put({
       type: consts.USER_LOGIN_SUCCESS,
-      payload: { success: result }
+      payload: { success: true }
     });
-  } catch (error) {
+  } catch (ex) {
+    console.log(ex.response.data);
     yield put({
       type: consts.USER_LOGIN_FAILED,
-      payload: { success: false, error: error.message }
+      payload: { success: false, message: ex.response.data }
     });
   }
 }
+
 function* userLoginWatcher() {
   yield takeEvery(consts.USER_LOGIN_REQUESTED, userLoginWorker);
 }
