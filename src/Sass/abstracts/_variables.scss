@@ -26,3 +26,126 @@ $grid-width: 114rem;
 $gutter-vertical: 8rem;
 $gutter-vertical-small: 6rem;
 $gutter-horizontal: 6rem;
+
+// COLORS
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
+  ),
+  $colors
+);
+
+// SPACER
+$spacer: 1rem !default;
+$spacers: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3)
+  ),
+  $spacers
+);
+
+$body-color:                $gray-900 !default;
+$border-width:                1px !default;
+$border-color:                $gray-300 !default;
+$text-muted:                  $gray-600 !default;
+
+// TABLE
+$table-cell-padding:          .75rem !default;
+$table-cell-padding-sm:       .3rem !default;
+
+$table-color:                 $body-color !default;
+$table-bg:                    null !default;
+$table-accent-bg:             rgba($black, .05) !default;
+$table-hover-color:           $table-color !default;
+$table-hover-bg:              rgba($black, .075) !default;
+$table-active-bg:             $table-hover-bg !default;
+
+$table-border-width:          $border-width !default;
+$table-border-color:          $border-color !default;
+
+$table-head-bg:               $gray-200 !default;
+$table-head-color:            $gray-700 !default;
+
+$table-dark-color:            $white !default;
+$table-dark-bg:               $gray-800 !default;
+$table-dark-accent-bg:        rgba($white, .05) !default;
+$table-dark-hover-color:      $table-dark-color !default;
+$table-dark-hover-bg:         rgba($white, .075) !default;
+$table-dark-border-color:     lighten($table-dark-bg, 7.5%) !default;
+
+$table-striped-order:         odd !default;
+
+$table-caption-color:         $text-muted !default;
+
+$table-bg-level:              -9 !default;
+$table-border-level:          -6 !default;
+
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);

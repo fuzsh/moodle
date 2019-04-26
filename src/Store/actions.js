@@ -27,3 +27,10 @@ export const doRegister = payload => {
      payload
    }
  }
+
+ export const fetchCourses = payload =>{
+   return{
+     type:consts.APPLICATION_FETCH_COURSES_REQUESTED,
+     payload
+   }
+ }

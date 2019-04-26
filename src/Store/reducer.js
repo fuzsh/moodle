@@ -2,9 +2,15 @@ import consts from "./constants";
 
 const defaultState = {
   isUserLoggedIn: false,
+  usersList: [],
   isLoginPage: true,
   message: [],
-  errors: []
+  errors: [],
+  courses: [],
+  userList: {},
+  username: "",
+  password: "",
+  loaded: false
 };
 
 const reducer = (state = defaultState, action) => {
@@ -27,6 +33,24 @@ const reducer = (state = defaultState, action) => {
       break;
     case consts.APP_PAGECHANGER_SUCCESS:
       newState = { ...state, isLoginPage: action.payload.status };
+      break;
+    case consts.APPLICATION_FETCH_USERS_SUCCESS:
+      newState = {
+        ...state,
+        usersList: action.payload.data
+      };
+      break;
+    case consts.APPLICATION_FETCH_COURSES_SUCCESS:
+      newState = {
+        ...state,
+        courses:action.payload.data,
+        username:action.payload.username,
+        password:action.payload.password,
+        loaded:action.payload.loaded
+      };
+      break;
+    case consts.APPLICATION_FETCH_COURSES_FAILED:
+      newState = { errors: [action.payload.message] };
       break;
     default:
       newState = state;

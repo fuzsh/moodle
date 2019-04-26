@@ -433,6 +433,194 @@ body {
   .popup__close:hover {
     color: #be2623; }
 
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529; }
+  .table th,
+  .table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6; }
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6; }
+  .table tbody + tbody {
+    border-top: 2px solid #dee2e6; }
+
+.table-sm th,
+.table-sm td {
+  padding: 0.3rem; }
+
+.table-bordered {
+  border: 1px solid #dee2e6; }
+  .table-bordered th,
+  .table-bordered td {
+    border: 1px solid #dee2e6; }
+  .table-bordered thead th,
+  .table-bordered thead td {
+    border-bottom-width: 2px; }
+
+.table-borderless th,
+.table-borderless td,
+.table-borderless thead th,
+.table-borderless tbody + tbody {
+  border: 0; }
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05); }
+
+.table-hover tbody tr:hover {
+  color: #212529;
+  background-color: rgba(0, 0, 0, 0.075); }
+
+.table-primary,
+.table-primary > th,
+.table-primary > td {
+  background-color: theme-color-level("primary", -9); }
+
+.table-primary th,
+.table-primary td,
+.table-primary thead th,
+.table-primary tbody + tbody {
+  border-color: theme-color-level("primary", -6); }
+
+.table-hover .table-primary:hover {
+  background-color: #f2f2f2; }
+  .table-hover .table-primary:hover > td,
+  .table-hover .table-primary:hover > th {
+    background-color: #f2f2f2; }
+
+.table-secondary,
+.table-secondary > th,
+.table-secondary > td {
+  background-color: theme-color-level("secondary", -9); }
+
+.table-secondary th,
+.table-secondary td,
+.table-secondary thead th,
+.table-secondary tbody + tbody {
+  border-color: theme-color-level("secondary", -6); }
+
+.table-hover .table-secondary:hover {
+  background-color: #f2f2f2; }
+  .table-hover .table-secondary:hover > td,
+  .table-hover .table-secondary:hover > th {
+    background-color: #f2f2f2; }
+
+.table-success,
+.table-success > th,
+.table-success > td {
+  background-color: theme-color-level("success", -9); }
+
+.table-success th,
+.table-success td,
+.table-success thead th,
+.table-success tbody + tbody {
+  border-color: theme-color-level("success", -6); }
+
+.table-hover .table-success:hover {
+  background-color: #f2f2f2; }
+  .table-hover .table-success:hover > td,
+  .table-hover .table-success:hover > th {
+    background-color: #f2f2f2; }
+
+.table-info,
+.table-info > th,
+.table-info > td {
+  background-color: theme-color-level("info", -9); }
+
+.table-info th,
+.table-info td,
+.table-info thead th,
+.table-info tbody + tbody {
+  border-color: theme-color-level("info", -6); }
+
+.table-hover .table-info:hover {
+  background-color: #f2f2f2; }
+  .table-hover .table-info:hover > td,
+  .table-hover .table-info:hover > th {
+    background-color: #f2f2f2; }
+
+.table-warning,
+.table-warning > th,
+.table-warning > td {
+  background-color: theme-color-level("warning", -9); }
+
+.table-warning th,
+.table-warning td,
+.table-warning thead th,
+.table-warning tbody + tbody {
+  border-color: theme-color-level("warning", -6); }
+
+.table-hover .table-warning:hover {
+  background-color: #f2f2f2; }
+  .table-hover .table-warning:hover > td,
+  .table-hover .table-warning:hover > th {
+    background-color: #f2f2f2; }
+
+.table-danger,
+.table-danger > th,
+.table-danger > td {
+  background-color: theme-color-level("danger", -9); }
+
+.table-danger th,
+.table-danger td,
+.table-danger thead th,
+.table-danger tbody + tbody {
+  border-color: theme-color-level("danger", -6); }
+
+.table-hover .table-danger:hover {
+  background-color: #f2f2f2; }
+  .table-hover .table-danger:hover > td,
+  .table-hover .table-danger:hover > th {
+    background-color: #f2f2f2; }
+
+.table-light,
+.table-light > th,
+.table-light > td {
+  background-color: theme-color-level("light", -9); }
+
+.table-light th,
+.table-light td,
+.table-light thead th,
+.table-light tbody + tbody {
+  border-color: theme-color-level("light", -6); }
+
+.table-hover .table-light:hover {
+  background-color: #f2f2f2; }
+  .table-hover .table-light:hover > td,
+  .table-hover .table-light:hover > th {
+    background-color: #f2f2f2; }
+
+.table-dark,
+.table-dark > th,
+.table-dark > td {
+  background-color: theme-color-level("dark", -9); }
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th,
+.table-dark tbody + tbody {
+  border-color: theme-color-level("dark", -6); }
+
+.table-hover .table-dark:hover {
+  background-color: #f2f2f2; }
+  .table-hover .table-dark:hover > td,
+  .table-hover .table-dark:hover > th {
+    background-color: #f2f2f2; }
+
+.table-active,
+.table-active > th,
+.table-active > td {
+  background-color: rgba(0, 0, 0, 0.075); }
+
+.table-hover .table-active:hover {
+  background-color: #f2f2f2; }
+  .table-hover .table-active:hover > td,
+  .table-hover .table-active:hover > th {
+    background-color: #f2f2f2; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
