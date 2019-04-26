@@ -28,31 +28,33 @@ const Login = ({ doLogin, errors, goToRegister }) => {
           <div className="u-margin-bottom-medium">
             <h2 className="heading-secondary">وارد شوید</h2>
           </div>
-          <div className="form__group">
-            <input
-              type="text"
-              className="form__input"
-              placeholder="نام کاربری"
-              id="userLoginName"
-              required
-            />
-            <label htmlFor="InputText" className="form__label">
-              نام کاربری
+          <div className="tab">
+            <div className="form__group">
+              <input
+                type="text"
+                className="form__input"
+                placeholder="نام کاربری"
+                id="userLoginName"
+                required
+              />
+              <label htmlFor="InputText" className="form__label">
+                نام کاربری
         </label>
-          </div>
-          <div className="form__group">
-            <input
-              type="password"
-              className="form__input"
-              placeholder="کلمه عبور"
-              id="userLoginPassword"
-              required
-            />
-            <label htmlFor="InputPassword" className="form__label">
-              کلمه عبور
+            </div>
+            <div className="form__group">
+              <input
+                type="password"
+                className="form__input"
+                placeholder="کلمه عبور"
+                id="userLoginPassword"
+                required
+              />
+              <label htmlFor="InputPassword" className="form__label">
+                کلمه عبور
         </label>
+            </div>
           </div>
-          <div className="form__group">
+          <div className="form__group" style={{ display: "inline-block" }}>
             <button
               className="btn btn--green"
               onClick={event => {
