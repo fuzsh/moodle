@@ -63,7 +63,7 @@ const Login = ({ doLogin, errors, goToRegister }) => {
         </button>
           </div>
 
-          {errors && <div className="u-center-text" style={{ color: red }}>
+          {errors && <div className="u-center-text" style={{ color: "red" }}>
             <p>
               {errors}
             </p>

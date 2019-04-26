@@ -1,4 +1,4 @@
-import { put, call, takeEvery, takeLatest, all } from "redux-saga/effects";
+import { put, call, takeEvery, all } from "redux-saga/effects";
 import consts from "./constants";
 import axios from "axios";
 import jwt from "jsonwebtoken";
@@ -57,25 +57,31 @@ function* userLoginWatcher() {
 }
 
 function* userRegisterWorker(action) {
+  let { firstname, lastname, username, email, password } = action.payload;
+  console.log(firstname);
+  
   try {
     let result = yield call(() => {
-      axios
-        .post("/post", action.payload)
-        .then(res => {
-          // console.log(res.data);
-        })
-        .catch(err => {
-          throw err;
-        });
+      return axios.post("http://localhost:5000/api/users", {
+        firstname,
+        lastname,
+        username,
+        email,
+        password,
+        grade: 0
+      });
     });
-    yield put({
-      type: consts.USER_REGISTER_SUCCESS,
-      payload: { success: true, message: "hi" }
-    });
-  } catch (error) {
+
+    if (result) {
+      yield put({
+        type: consts.USER_REGISTER_SUCCESS,
+        payload: { message: "ثبت نام شما با موفقیت انجام شد، وارد شوید ....!" }
+      });
+    }
+  } catch (ex) {
     yield put({
       type: consts.USER_REGISTER_FAILED,
-      payload: { success: false, error: error.message }
+      payload: { message: ex.response.data }
     });
   }
 }

@@ -2,15 +2,14 @@ import consts from "./constants";
 
 const defaultState = {
   isUserLoggedIn: false,
-  usersList: [],
   isLoginPage: true,
+  loaded: false,
+  usersList: [],
+  courses: [],
   message: [],
   errors: [],
-  courses: [],
-  userList: {},
   username: "",
-  password: "",
-  loaded: false
+  password: ""
 };
 
 const reducer = (state = defaultState, action) => {
@@ -23,30 +22,30 @@ const reducer = (state = defaultState, action) => {
       newState = { ...state, isUserLoggedIn: action.payload.success };
       break;
     case consts.USER_LOGIN_FAILED:
-      newState = {
-        ...state,
-        errors: [action.payload.message]
-      };
+      newState = { ...state, errors: [action.payload.message] };
       break;
     case consts.USER_REGISTER_SUCCESS:
       newState = { ...state, message: [action.payload.message] };
+      setTimeout(() => {
+        newState = { ...state, isLoginPage: true };
+      }, 2500);
+      break;
+    case consts.USER_REGISTER_FAILED:
+      newState = { ...state, errors: [action.payload.message] };
       break;
     case consts.APP_PAGECHANGER_SUCCESS:
       newState = { ...state, isLoginPage: action.payload.status };
       break;
     case consts.APPLICATION_FETCH_USERS_SUCCESS:
-      newState = {
-        ...state,
-        usersList: action.payload.data
-      };
+      newState = { ...state, usersList: action.payload.data };
       break;
     case consts.APPLICATION_FETCH_COURSES_SUCCESS:
       newState = {
         ...state,
-        courses:action.payload.data,
-        username:action.payload.username,
-        password:action.payload.password,
-        loaded:action.payload.loaded
+        courses: action.payload.data,
+        username: action.payload.username,
+        password: action.payload.password,
+        loaded: action.payload.loaded
       };
       break;
     case consts.APPLICATION_FETCH_COURSES_FAILED:
