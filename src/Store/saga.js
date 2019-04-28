@@ -29,7 +29,7 @@ function* userLoginWorker(action) {
   try {
     let result = yield call(() => {
       return axios
-        .post("http://localhost:5000/api/auth", {
+        .post("https://moodle.liara.run/api/auth", {
           username: userName,
           password: userPassword
         })
@@ -69,7 +69,7 @@ function* userRegisterWorker(action) {
 
   try {
     let result = yield call(() => {
-      return axios.post("http://localhost:5000/api/users", {
+      return axios.post("https://moodle.liara.run/api/users", {
         firstname,
         lastname,
         username,
@@ -117,7 +117,7 @@ function* appFetchCoursesWorker() {
 
     if (decodedToken.isAdmin) {
       let adminResult = yield call(() => {
-        return axios.get("http://localhost:5000/api/admin", {
+        return axios.get("https://moodle.liara.run/api/admin", {
           headers: { "x-auth-token": token }
         });
       });
@@ -131,7 +131,7 @@ function* appFetchCoursesWorker() {
     }
 
     let userCourses = yield call(() => {
-      return axios.get("http://localhost:5000/api/user", {
+      return axios.get("https://moodle.liara.run/api/user", {
         headers: { "x-auth-token": token }
       });
     });

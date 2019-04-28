@@ -6,7 +6,7 @@ class AdminPanel extends Component {
         e.preventDefault();
         const token = localStorage.getItem('x-auth-token')
 
-        axios.post(`http://localhost:5000/api/admin/${userId}`, null, { headers: { "x-auth-token": token } })
+        axios.post(`https://moodle.liara.run/api/admin/${userId}`, null, { headers: { "x-auth-token": token } })
             .then(response => {
                 console.log(response.data);
             }).catch(ex => {
