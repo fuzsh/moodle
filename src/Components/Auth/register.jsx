@@ -49,6 +49,7 @@ const Register = ({ doRegister, goToLogin, errors, message }) => {
     let lastname = document.querySelector("#lastName").value;
     let email = document.querySelector("#email").value;
     let grade = document.querySelector(".form__radio-input:checked").value;
+    grade = parseInt(grade)
 
     doRegister({
       username,
