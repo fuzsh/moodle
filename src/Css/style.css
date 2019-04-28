@@ -288,11 +288,11 @@ body {
   transform: translateY(-4rem); }
 
 .form__radio-group {
-  width: 24%;
+  width: 49%;
   display: inline-block; }
   @media only screen and (max-width: 56.25em) {
     .form__radio-group {
-      width: 49%;
+      width: 100%;
       margin-bottom: 2rem; } }
 
 .form__radio-input {

@@ -35,7 +35,8 @@ const Register = ({ doRegister, goToLogin, errors, message }) => {
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
     if (currentTab >= x.length) {
-      RegisterHandler(event)
+      RegisterHandler(event);
+      showTab(currentTab % x.length);
       return false;
     }
     showTab(currentTab);
@@ -47,13 +48,15 @@ const Register = ({ doRegister, goToLogin, errors, message }) => {
     let firstname = document.querySelector("#firstName").value;
     let lastname = document.querySelector("#lastName").value;
     let email = document.querySelector("#email").value;
+    let grade = document.querySelector(".form__radio-input:checked").value;
 
     doRegister({
       username,
       password,
       firstname,
       lastname,
-      email
+      email,
+      grade
     });
   };
 
@@ -124,7 +127,7 @@ const Register = ({ doRegister, goToLogin, errors, message }) => {
             </div>
           </div>
           <div className="tab" style={{ display: "none" }}>
-            <div className="form__group" id="email">
+            <div className="form__group">
               <input
                 type="email"
                 className="form__input"
@@ -136,19 +139,36 @@ const Register = ({ doRegister, goToLogin, errors, message }) => {
                 رایانامه
         </label>
             </div>
-            <div className="form__group" id="email">
-              <input
-                type="email"
-                className="form__input"
-                placeholder="رایانامه"
-                id="email"
-                required
-              />
-              <label htmlFor="InputEmail" className="form__label">
-                رایانامه
-        </label>
+            <div className="form__group u-margin-bottom-medium">
+              <div className="form__radio-group">
+                <input
+                  type="radio"
+                  className="form__radio-input"
+                  id="riyazi"
+                  name="grade"
+                  value='1'
+                  defaultChecked
+                />
+                <label htmlFor="riyazi" className="form__radio-label">
+                  <span className="form__radio-button" />
+                  ریاضی
+                  </label>
+              </div>
+              <div className="form__radio-group">
+                <input
+                  type="radio"
+                  className="form__radio-input"
+                  id="fizik"
+                  name="grade"
+                  value='0'
+                  defaultChecked
+                />
+                <label htmlFor="fizik" className="form__radio-label">
+                  <span className="form__radio-button" />
+                  فیزیک
+                  </label>
+              </div>
             </div>
-
           </div>
 
           <div className="form__group" style={{ display: "inline-block" }}>
@@ -168,7 +188,7 @@ const Register = ({ doRegister, goToLogin, errors, message }) => {
             </p>
           </div>}
 
-          {message && <div className="u-center-text" style={{ color: "red" }}>
+          {message && <div className="u-center-text" style={{ color: "blue" }}>
             <p>
               {message}
             </p>

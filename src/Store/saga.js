@@ -57,9 +57,16 @@ function* userLoginWatcher() {
 }
 
 function* userRegisterWorker(action) {
-  let { firstname, lastname, username, email, password } = action.payload;
+  let {
+    firstname,
+    lastname,
+    username,
+    email,
+    password,
+    grade
+  } = action.payload;
   console.log(firstname);
-  
+
   try {
     let result = yield call(() => {
       return axios.post("http://localhost:5000/api/users", {
@@ -68,7 +75,7 @@ function* userRegisterWorker(action) {
         username,
         email,
         password,
-        grade: 0
+        grade
       });
     });
 
